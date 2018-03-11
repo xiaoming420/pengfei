@@ -1,0 +1,6 @@
+RewriteEngine on
+#index
+RewriteRule ^index.html index.php?file=2
+ 
+
+ 

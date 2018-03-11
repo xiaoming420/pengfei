@@ -1,0 +1,45 @@
+
+这是用来检测你的主机是否支持  伪静态和.htaccess功能。
+
+特别是.htaccess功能，这是DM建站系统必须要有的。
+
+IIS服务器，默认是不支持.htaccess的。但大多数主机提供商，都会加这个功能。
+
+有可能是支持，但是你在主机面板里关闭了。无论何种情况，用下面方法检测。
+
+--------------
+
+本代码是纯php代码，和DM系统无关。所以可以比较公正的检测主机(空间)。
+
+------------
+操作方法：
+
+把check目录上传到你的主机下。
+
+分别测试下面两个网址：
+http://www.yoursite.com/check/index.php?file=2
+
+http://www.yoursite.com/check/index.html
+
+
+如果上面两个访问的结果一样，都是2.则表示支持。
+
+index.html本身是不存在的，它会转化成index.php?file=2。
+如果转化不了。那么http://www.yoursite.com/check/index.html 就访问不了，
+说明你的主机不支持伪静态和.htaccess功能，也就无法正常使用DM系统了。
+
+-------
+
+如果是不支持。请找主机提供商。把check代码给他们。
+
+如果是在本地，可以查看这个链接： http://www.demososo.com/host_readyfor_dm.html
+
+
+
+---------结束----------
+
+
+
+
+
+

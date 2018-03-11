@@ -1,0 +1,52 @@
+/*DM企业建安系统 www.demososo.com */
+
+/*header*/
+ .topsearchbox form{border:0px solid #FF7A00}
+.contentwrap{margin-top:20px}
+  body{   color:#000}  
+ a{color:#333;text-decoration:none; } a:hover{color:#3DA8E0}    
+ .sidebar a.active{font-weight:bold;color:#3DA8E0}
+ .topsearch .searchbtn{background:#3DA8E0;color:#fff }
+ .topsearchbox{right:50px;top:48px}.langimg{top: 58px}
+ .pageroll a,.pageroll span{border:1px solid #ddd;background:#e2e2e2;color:#12A7ED;}
+.pageroll span{color:#bbb}
+.pageroll a.cur,.pageroll a:hover{color:#fff;background:#12A7ED}
+
+
+.header{  color:#000} 
+ .header a{color:#000} 
+ .header a:hover{color:#000} 
+.footer{background:#3DA8E0 ;color:#DEF0FA} .footer .blockhd{color:#DEF0FA}
+ .footer a{color:#DEF0FA} 
+ .footer a:hover{color:#2c455e}
+ 
+.footerbar{background:;color:} 
+ .footerbar a{color:} 
+ .footerbar a:hover{color:}
+    
+.boxheader{height: 40px;background:#3DA8E0 ;}
+.boxheader h3{color:#fff;border-left:5px solid #fff}
+.boxheader .more{color:#fff}.boxheader .more:hover{color:#fff}
+.content_header h3{border-left: 5px solid #3DA8E0;}.content_header{border-bottom: 1px solid #3DA8E0;}
+.sdheader,.sidebar h4.blockhd{height:40px;line-height:40px; background:#3DA8E0 ; color: #fff;text-align:center;font-size:14px;font-weight:bold}.newsgridlist h3{background}
+
+ 
+ /*----------仅限pc端样式 only pc style---------*/
+@media (min-width: 801px) {
+.topsearchbox{display: block}
+.menu{background:#12A7ED ;height: 60px ;line-height:60px;border-bottom:0;z-index:99;    } 
+ .menu li.m{background:#12A7ED;border-bottom:0;}  
+ .menu a{color:#fff} 
+ .menu a:hover,.menu a.active{background:#43BDF8 ;color:#fff} 
+.menu li li{background:#43BDF8;height: 30px ;line-height:30px;border-bottom:1px solid #7ECFF5;z-index:99;    } 
+ .menu li li a{color:#fff} 
+ .menu li li a:hover,.menu li li a.active{background:#20B3F6;color:#fff} 
+} 
+/*----------仅限mobile端样式 only mobile style---------*/
+@media (max-width: 800px) { 
+.langimg{top: 18px}
+  
+}
+
+ 
+ 

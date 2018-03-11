@@ -1,0 +1,63 @@
+/*DM企业建安系统 www.demososo.com */
+ .pageroll a.cur, .pageroll a:hover{color:#999}
+.news_scroll .circle{background:#383D61; }
+
+.headermobsearch{color:#F86539;display: block}
+.topsearchbox{display:none; }
+body{ background:none ;   color:#000}
+ a{color:#666;text-decoration:none; } a:hover{color:#FF6634}
+ .sidebar a.active{font-weight:bold;color:#FF5722}
+ .topsearch .searchbtn{background:#FF5722;color:#fff }
+ .pageroll a,.pageroll span{border:1px solid #ddd;background:#e2e2e2;color:none;}
+.pageroll span{color:#bbb}
+.pageroll a.cur,.pageroll a:hover{color:#ccc;background:none}
+
+.header{  color:#000}
+ .header a{color:#000}
+ .header a:hover{color:#000}
+ .stricky-fixed .header{height: 50px;position:relative;background:#154f8a;}
+ .stricky-fixed .header .logo img{height: 40px; }
+ .stricky-fixed .header .menu{top:0px}
+ .stricky-fixed .header .headermobsearch{top:16px}
+ .stricky-fixed .header .langimg{top:16px}
+ .stricky-fixed .header .topsearchbox{top:66px}
+
+
+
+.footer{background:#383D61 ;color:#fff} .footer .blockhd{color:#e2e2e2}
+ .footer a{color:#97C1E7}
+ .footer a:hover{color:#ebe6b7}
+
+
+/*fullheightslider*/
+.nobanner{height: 250px; background:url(banner.jpg)  center center no-repeat; background-size: cover;}
+.bannertext h1{display:block;color:#fff;padding-top:130px }
+
+.boxheader{height: 40px;background:#383D61 ;}
+.boxheader h3{color:#fff;border-left:5px solid #fff}
+.boxheader .more{color:#fff}.boxheader .more:hover{color:#fff}
+.content_header h3{border-left: 5px solid #383D61;}.content_header{border-bottom: 1px solid #383D61;}
+.sdheader,.sidebar h4.blockhd{height:40px;line-height:40px; background:#383D61 ; color: #fff;text-align:center;font-size:14px;font-weight:bold}.newsgridlist h3{background}
+
+
+ /*----------仅限pc端样式 only pc style---------*/
+@media (min-width: 801px) {
+ .topsearchbox{top:98px; }
+.menu{background:none ;height: 50px ;line-height:50px;border-bottom:0;z-index:199;    }
+ .menu li.m{background:none;border-bottom:0;}
+ .menu a{color:#ccc}
+  .menu a.m{padding:0 20px}
+ .menu a:hover,.menu a.active{background:none ;color:#fff}
+.menu li li{background:#FF5722;height: 35px ;line-height:35px;border-bottom:1px solid #ffac22;z-index:99;    }
+ .menu li li a{color:#fff}
+ .menu li li a:hover,.menu li li a.active{background:#ff9122;color:#fff}
+a.m .sf-sub-indicator {background-position: -50px -100px;}
+.menuright .sf-sub-indicator{right:8px}
+
+}
+/*----------仅限mobile端样式 only mobile style---------*/
+@media (max-width: 800px) {
+
+ .bannerimg,.nobanner{height: 150px; }
+.bannertext h1{font-size:18px;padding-top:90px }
+}

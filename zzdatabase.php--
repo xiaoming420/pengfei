@@ -1,0 +1,201 @@
+
+ 
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>配置数据库</title>
+<meta name="author" content="" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="all" />
+ 
+ <style>
+ *{padding:0;margin:0}
+ h3{font-size:16px;margin:30px 0;background:#d4e5f7;padding:20px 0;text-align:center;}
+ .wrap{width:600px;margin:0 auto}
+ p{padding:10px 0  30px 0 ;color:#999}
+ 
+ input{padding:5px;width:300px}
+  .red{color:red} .blue{color:blue}
+  .notice{padding:20px 0;font-size:14px}
+ .content{font-size:14px;line-height:25px}
+ .submit input{border:0;margin:10px;cursor:pointer;padding:10px 0;background:#12A7ED;color:#fff}
+
+ </style>
+
+</head>
+<body>
+<h3>
+DM系统数据库配置。 
+
+</h3>
+<p style="text-align:center">
+ <a href="http://www.demososo.com/install.html" target="_blank">DM系统安装教程></a>
+ </p>
+
+<div class="wrap">
+
+
+<?php 
+ 
+$dirnamefile = dirname(__FILE__);
+
+$file=str_replace('\\','/',$dirnamefile).'/component/dm-config/database.php';
+
+$filesql=str_replace('\\','/',$dirnamefile).'/component/dm-config/mysql.php';
+$filesqlold=str_replace('\\','/',$dirnamefile).'/component/dm-config/mysqloldversion.php';
+$filesqlnew=str_replace('\\','/',$dirnamefile).'/component/dm-config/mysqli5.5.php'; 
+	
+	
+$act = @$_GET['act'];
+$local=$data=$user=$ps='';
+ 
+if($act=='doit'){
+	
+	$local = htmlentitdm($_POST['local']);
+	$data = htmlentitdm($_POST['data']);
+	$user = htmlentitdm($_POST['user']);
+	$ps = htmlentitdm($_POST['ps']);
+	$mysql55 = htmlentitdm($_POST['mysql55']);
+
+	if($mysql55=='y') $mysqlcont =  file_get_contents($filesqlnew);
+	else  $mysqlcont =  file_get_contents($filesqlold);
+
+	//echo $mysqlcont;
+
+		file_put_contents($filesql,$mysqlcont);
+
+	
+	$content = '<?php  $mysql_server_name="'.$local.'"; $mysql_database="'.$data.'"; $mysql_username="'.$user.'";  $mysql_password="'.$ps.'"; ?>';  
+	
+
+	file_put_contents($file,$content);
+
+
+
+if($mysql55=='y') {
+
+			$con=mysqli_connect($local,$user,$ps,$data); 
+			 
+			if (!$con) 
+			{ 
+			   echo '<br /><br /><a href="zzdatabase.php"><<<<<返回重新配置</a><br /><br />';
+			    die("出错，请仔细检查。sql是否导入。数据库用户名或密码是否正确。" . mysqli_connect_error()); 
+			     
+			} 
+
+
+		 
+}
+else{
+ 
+				$con = mysql_connect($local, $user,$ps,'utf-8');
+				if (!$con)
+				  {
+				  	echo '<a href="zzdatabase.php"><<<<<返回重新配置</a>';
+				  die('<br /><br />出错，用户名或密码不对。<br />(或者试下选择mysql5.5)<br /> ' . mysql_error());
+				  
+				  }
+
+				$db_selected = mysql_select_db($data, $con);
+
+				if (!$db_selected)
+				  {
+				  	echo '<a href="zzdatabase.php"><<<<<返回重新配置</a>';
+				  die ("<br /><br />出错，数据库可能不存在。请先用phpmyadmin导入sql文件<br />(或者试下选择mysql5.5)<br /> " . mysql_error());
+				    
+				  }
+
+				mysql_close($con);
+
+
+}
+ 
+	
+	?>
+	<div style="">
+
+		配置信息为：<br />
+	服务器：<span class="blue"><?php echo $local;?></span><br />
+	数据库名称：<span class="blue"><?php echo $data;?></span><br />
+	数据库用户名：<span class="blue"><?php echo $user;?></span><br />
+	数据库密码：<span class="blue"><?php echo $ps;?></span><br />
+	
+	<p class="red"> <br /><br />
+ 数据库配置成功。
+ 
+<br />
+</p>
+<p>
+ 
+<a   href="index.php">访问首页></a>
+<span style="color:red;font-size:22px">(访问首页前，记得删除或改名zzdatabase.php文件) 
+</span>
+</p>
+<p>
+<a href="zzdatabase.php"><<<<<返回重新配置</a>
+ </p>
+</div>
+
+ 
+ 
+
+	
+	<?php
+}
+else {
+	
+	
+?>
+
+<div class="notice red">
+这里的配置会影响component\dm-config\database.php文件的内容。<br />
+其实通过编辑database.php文件，也可以达到配置数据库的作用。
+
+</div>
+<br /><br />
+<strong>配置信息：</strong><br /><br />
+<form name="form1" method="post" action="<?php echo 'zzdatabase.php?act=doit' ?>">
+<div class="content">
+数据库的服务器地址：<input type="text" name="local" value="localhost" />
+<p>一般是localhost，有的空间商不是localhost，具体要问空间商。
+<br />
+比如阿里云的空间，localhost要换成阿里云后台的提示。叫<strong>数据库连接地址</strong>。
+</p>
+
+
+数据库名称： <input type="text" name="data" value="databasename" />
+<p>先要用phpmyadmin等工具创建一个数据库，然后在这里输入这个数据库名称，
+如果是线上的空间 ，是不允许你创建的，一般空间商已经给您分配了一个数据库。
+
+</p>
+
+数据库用户名： <input type="text" name="user" value="root" />
+<br /><br />
+数据库密码：<input type="text" name="ps" value="" />
+
+<br /><br />
+是否使用mysql5.5以上：<select name="mysql55"><option value="n">不是</option>
+<option value="y">是</option>
+
+</select>
+
+
+</div>
+<div class="submit">
+          <input  type="submit"  name="Submit" value="开始配置">
+        </div>
+		
+ </form>
+ <br /> <br />
+
+ </div>
+ 
+ <?php 
+ 
+}
+ ?>
+</body>
+</html>

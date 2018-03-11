@@ -1,0 +1,8 @@
+如果mysql5.5以上，请把mysqli5.5.php里的内容复制到mysql.php
+如果是mysql旧版本，请不用操作。我们默认是旧版本。
+
+--------
+if your mysql version is above 5.5,
+pls copy mysqli5.5.php  to mysql.php.
+
+we use mysql old verion . 

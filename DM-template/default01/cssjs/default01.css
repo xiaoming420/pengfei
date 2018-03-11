@@ -1,0 +1,56 @@
+/*DM企业建安系统 www.demososo.com */
+
+/*header*/
+ .headermobsearch{display:block;}
+
+.topsearchbox form{border:1px solid #FF7A00}
+.topsearchbox form button{color:#FF7A00}
+ .stricky-fixed{ background:#fff;}
+
+ body{   color:#000} 
+ 
+ a{color:#666;text-decoration:none; } a:hover{color:#FF6634}    
+ .sidebar a.active{font-weight:bold;color:#FF8719}
+ .topsearch .searchbtn{background:#FF8719;color:#fff }
+ .pageroll a,.pageroll span{border:1px solid #ddd;background:#e2e2e2;color:;}
+.pageroll span{color:#bbb}
+.pageroll a.cur,.pageroll a:hover{color:#000;background:}
+ 
+.header{ background:#fff ;  color:#000} 
+ .header a{color:#000} 
+ .header a:hover{color:#000} 
+.footer{background:#FFB16A ;color:#DEF0FA} .footer .blockhd{color:#DEF0FA}
+ .footer a{color:#DEF0FA} 
+ .footer a:hover{color:#fff}
+ 
+   
+.boxheader{height: 40px;background:#FF8719 ;}
+.boxheader h3{color:#fff;border-left:5px solid #fff}
+.boxheader .more{color:#fff}.boxheader .more:hover{color:#fff}
+.content_header h3{border-left: 5px solid #FF8719;}.content_header{border-bottom: 1px solid #FF8719;}
+.sdheader,.sidebar h4.blockhd{height:40px;line-height:40px; background:#FF8719 ; color: #fff;text-align:center;font-size:14px;font-weight:bold}.newsgridlist h3{background}
+
+ 
+ /*----------仅限pc端样式 only pc style---------*/
+@media (min-width: 801px) {
+ .topsearchbox{  top:98px}
+.menu{background: ;height: 50px ;line-height:50px;border-bottom:0;z-index:99;    } 
+ .menu li.m{border-bottom:0;}  
+ .menu a{color:#000} 
+ .menu a:hover,.menu a.active{background: ;color:#FF7A00} 
+.menu li li{background:#FE972E;height: 30px ;line-height:30px;border-bottom:1px solid  #F7CE64;z-index:99;    } 
+ .menu li li a{color:#e2e2e2} 
+ .menu li li a:hover,.menu li li a.active{background:#FEAC5A;color:#e2e2e2} 
+
+ header.stricky-fixed{height: 60px; }
+ header.stricky-fixed .logo img{height: 50px; }
+  header.stricky-fixed .menu{top:8px}
+ header.stricky-fixed .headermobsearch{ top:27px}
+ header.stricky-fixed .topsearchbox{top:66px}
+ header.stricky-fixed .langimg{top:26px}
+} 
+/*----------仅限mobile端样式 only mobile style---------*/
+@media (max-width: 800px) {
+ 
+
+}
