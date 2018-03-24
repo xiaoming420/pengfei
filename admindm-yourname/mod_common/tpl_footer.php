@@ -16,10 +16,6 @@
     </div>
 
 
-
-
-&copy;DM企业建站系统 <a href="http://www.demososo.com" target="_blank">demososo.com</a> 版权所有 2018
-
 &nbsp;&nbsp;
 
 
