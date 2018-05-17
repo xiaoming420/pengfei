@@ -11,7 +11,7 @@
             
             
           
-            <div class="text">
+            <div class="text" style="width: 780px;">
                   
                <?php
                if($namefront<>'') echo '<h4 class="blockhd">'.$namefront.'</h4>';
